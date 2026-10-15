@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 860" width="1000" height="860">
+  
+  <circle cx="500" cy="400" r="148" fill="#f6b40e" stroke="#c98a0b" stroke-width="6"/>
+  <g fill="#0c0a0b" stroke="#0c0a0b" stroke-width="16" stroke-linejoin="round">
+  <polygon points="495,118 449,214 429,676 495,676"/>
+  <rect x="403" y="676" width="92" height="18"/>
+  <rect x="505" y="170" width="52" height="18"/>
+  <polygon points="505,186 571,186 571,204 565,204 571,586 505,586"/>
+  <rect x="505" y="584" width="112" height="110"/>
+</g>
+  <g fill="#e8dec8">
+  <polygon points="495,118 449,214 429,676 495,676"/>
+  <rect x="403" y="676" width="92" height="18"/>
+  <rect x="505" y="170" width="52" height="18"/>
+  <polygon points="505,186 571,186 571,204 565,204 571,586 505,586"/>
+  <rect x="505" y="584" width="112" height="110"/>
+</g>
+  <rect fill="#f6b40e" x="465" y="236" width="18" height="26"/>
+  <rect fill="#0c0a0b" x="519" y="236" width="6" height="334"/>
+  <rect fill="#0c0a0b" x="536" y="236" width="6" height="334"/>
+  <rect fill="#0c0a0b" x="553" y="236" width="6" height="334"/>
+  <g fill="none" stroke-linecap="round" stroke-width="30">
+    <path stroke="#74acdf" d="M240,690 C330,666 420,714 500,690 S670,666 750,690"/>
+    <path stroke="#ffffff" d="M252,718 C342,694 432,742 512,718 S682,694 762,718"/>
+    <path stroke="#74acdf" d="M264,746 C354,722 444,770 524,746 S694,722 774,746"/>
+  </g>
+</svg>

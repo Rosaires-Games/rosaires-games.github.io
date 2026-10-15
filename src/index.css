@@ -1,0 +1,343 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/montserrat";
+@import "@fontsource/anton";
+@import "@fontsource/special-elite";
+@import "@fontsource-variable/oswald";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Fonts and radius come from the per-identity tokens below, so a data-theme swap restyles everything. */
+@theme inline {
+    --ease-standard: var(--easing-standard);
+    --ease-emphasized: var(--easing-emphasized);
+    --ease-exit: var(--easing-exit);
+    --ease-sheet: var(--easing-sheet);
+    --ease-spring: var(--easing-spring);
+    --font-sans: var(--font-body);
+    --font-display: var(--font-heading);
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    --text-display: clamp(2.5rem, 1.6rem + 3.6vw, 4.5rem);
+    --text-display--line-height: 1.05;
+    --text-display--letter-spacing: -0.035em;
+    --text-display--font-weight: 700;
+    --text-title: clamp(1.875rem, 1.5rem + 1.5vw, 2.5rem);
+    --text-title--line-height: 1.15;
+    --text-title--letter-spacing: -0.025em;
+    --text-title--font-weight: 700;
+    --text-heading: 1.5rem;
+    --text-heading--line-height: 1.25;
+    --text-heading--letter-spacing: -0.02em;
+    --text-heading--font-weight: 600;
+    --text-subheading: 1.125rem;
+    --text-subheading--line-height: 1.4;
+    --text-subheading--letter-spacing: -0.01em;
+    --text-subheading--font-weight: 600;
+    --text-lead: 1.25rem;
+    --text-lead--line-height: 1.6;
+    --text-body: 1rem;
+    --text-body--line-height: 1.7;
+    --text-caption: 0.8125rem;
+    --text-caption--line-height: 1.4;
+    --text-caption--letter-spacing: 0.01em;
+    --text-eyebrow: 0.75rem;
+    --text-eyebrow--line-height: 1rem;
+    --text-eyebrow--letter-spacing: 0.08em;
+    --text-eyebrow--font-weight: 600;
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+        }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+        }
+    }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+        }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+        }
+    }
+  @keyframes noise-grain {
+  0%, 100% {
+    transform: translate(0, 0);
+        }
+  10% {
+    transform: translate(-5%, -10%);
+        }
+  20% {
+    transform: translate(-15%, 5%);
+        }
+  30% {
+    transform: translate(7%, -25%);
+        }
+  40% {
+    transform: translate(-5%, 25%);
+        }
+  50% {
+    transform: translate(-15%, 10%);
+        }
+  60% {
+    transform: translate(15%, 0%);
+        }
+  70% {
+    transform: translate(0%, 15%);
+        }
+  80% {
+    transform: translate(3%, 35%);
+        }
+  90% {
+    transform: translate(-10%, 10%);
+        }
+    }
+  @keyframes blink {
+  50% {
+    opacity: 0;
+        }
+    }
+}
+
+/* Rosaires Games (studio). Colors sampled from rosaires_mark.svg: navy #0E2648, celeste #74ACDF, sol #F6B40E, "GAMES" red. */
+:root {
+    --font-body: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "Montserrat Variable", ui-sans-serif, system-ui, sans-serif;
+    --font-signage: var(--font-heading);
+    --radius: 1rem;
+    --background: #f8f6f0;
+    --foreground: #0e2648;
+    --card: #ffffff;
+    --card-foreground: #0e2648;
+    --popover: #ffffff;
+    --popover-foreground: #0e2648;
+    --primary: #0e2648;
+    --primary-foreground: #ffffff;
+    --secondary: #74acdf;
+    --secondary-foreground: #0e2648;
+    --muted: #eef3f9;
+    --muted-foreground: #4a5b78;
+    --accent: #f6b40e;
+    --accent-foreground: #0e2648;
+    --destructive: #a3262a;
+    --border: #d9e3ee;
+    --input: #d9e3ee;
+    --ring: #74acdf;
+    --chart-1: #0e2648;
+    --chart-2: #74acdf;
+    --chart-3: #f6b40e;
+    --chart-4: #c98a0b;
+    --chart-5: #a3262a;
+    --sidebar: #ffffff;
+    --sidebar-foreground: #0e2648;
+    --sidebar-primary: #0e2648;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #eef3f9;
+    --sidebar-accent-foreground: #0e2648;
+    --sidebar-border: #d9e3ee;
+    --sidebar-ring: #74acdf;
+    --sol: #f6b40e;
+    --sol-deep: #c98a0b;
+    --celeste: #74acdf;
+}
+
+.dark {
+    --background: #0a1a33;
+    --foreground: #f3f6fb;
+    --card: #102446;
+    --card-foreground: #f3f6fb;
+    --popover: #102446;
+    --popover-foreground: #f3f6fb;
+    --primary: #f6b40e;
+    --primary-foreground: #0e2648;
+    --secondary: #1e3a66;
+    --secondary-foreground: #f3f6fb;
+    --muted: #14294d;
+    --muted-foreground: #a9b8cf;
+    --accent: #74acdf;
+    --accent-foreground: #0a1a33;
+    --destructive: #e0484c;
+    --border: #22406e;
+    --input: #22406e;
+    --ring: #f6b40e;
+    --sidebar: #102446;
+    --sidebar-foreground: #f3f6fb;
+    --sidebar-primary: #f6b40e;
+    --sidebar-primary-foreground: #0e2648;
+    --sidebar-accent: #14294d;
+    --sidebar-accent-foreground: #f3f6fb;
+    --sidebar-border: #22406e;
+    --sidebar-ring: #f6b40e;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: color-mix(in oklab, var(--ring) 50%, transparent);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+  }
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer base {
+  :root {
+    --z-raised: 10;
+    --z-sticky: 40;
+    --z-overlay: 50;
+    --z-popover: 60;
+    --z-toast: 70;
+    --z-tooltip: 80;
+    --z-drag: 90;
+    --z-island: 100;
+    --duration-instant: 100ms;
+    --duration-fast: 150ms;
+    --duration-normal: 200ms;
+    --duration-slow: 300ms;
+    --duration-slower: 500ms;
+    --easing-standard: cubic-bezier(0.2, 0, 0, 1);
+    --easing-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+    --easing-exit: cubic-bezier(0.3, 0, 0.8, 0.15);
+    --easing-sheet: cubic-bezier(0.32, 0.72, 0, 1);
+    --easing-spring: linear(0, 0.4 20%, 1.1 50%, 0.96 70%, 1);
+    }
+  button:not(:disabled):not([aria-disabled='true']), [role='button']:not([aria-disabled='true']), summary, select:not(:disabled), input:is([type='checkbox'], [type='radio'], [type='color'], [type='file'], [type='range'], [type='submit'], [type='button'], [type='reset']):not(:disabled) {
+    cursor: pointer;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    }
+}
+  html[data-theme-transition]::view-transition-old(root), html[data-theme-transition]::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+  html[data-theme-transition] *:not([data-slot='theme-switch'] *) {
+    transition: none !important;
+}
+/* Final Arrangements. Values from the game's assets/ui/theme.tres. Dark only, so it ignores .dark.
+   Set on <html> for the game route (portals inherit it) or on any element to scope a preview, like the featured card. */
+[data-theme="final-arrangements"] {
+    --font-body: "Special Elite", "Courier New", monospace;
+    --font-heading: "Anton", Impact, sans-serif;
+    --font-signage: "Oswald Variable", sans-serif;
+    --radius: 0px;
+    --background: #080708;
+    --foreground: #d1c9b8;
+    --card: #0d0b0b;
+    --card-foreground: #d1c9b8;
+    --popover: #0d0b0b;
+    --popover-foreground: #d1c9b8;
+    --primary: #96120e;
+    --primary-foreground: #f7ebd9;
+    --secondary: #0f0e0f;
+    --secondary-foreground: #d1c9b8;
+    --muted: #141112;
+    --muted-foreground: #999187;
+    --accent: #380a09;
+    --accent-foreground: #f7ebd9;
+    --destructive: #d93326;
+    --border: #403833;
+    --input: #4d4540;
+    --ring: #e6d9bf;
+    --paper: #f2ebd6;
+    --ink: #211c17;
+    --red-ink: #9e140f;
+    --hud-gold: #f2c766;
+    --fog: #0a0b0f;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+    color-scheme: dark;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+}
+[data-theme="final-arrangements"] img {
+    image-rendering: pixelated;
+}
+/* Site-level tokens and effects shared by both identities. */
+@theme inline {
+    --font-sign: var(--font-signage);
+    --color-sol: var(--sol);
+    --color-celeste: var(--celeste);
+    --color-paper: var(--paper);
+    --color-ink: var(--ink);
+    --color-red-ink: var(--red-ink);
+    --color-hud-gold: var(--hud-gold);
+    --animate-sun-spin: sun-spin 120s linear infinite;
+    --animate-wave-drift: wave-drift 40s linear infinite;
+    --animate-flicker: flicker 2.4s steps(1, end) infinite;
+    @keyframes sun-spin {
+        to { rotate: 360deg; }
+    }
+    @keyframes wave-drift {
+        to { translate: -50% 0; }
+    }
+    @keyframes flicker {
+        0%, 100% { opacity: 1; }
+        6% { opacity: 0.35; }
+        8% { opacity: 1; }
+        47% { opacity: 0.7; }
+        49% { opacity: 1; }
+    }
+}
+
+.scanlines {
+    background: repeating-linear-gradient(to bottom, transparent 0 2px, rgb(0 0 0 / 0.28) 2px 3px);
+}
+
+/* Red vignette that grows with --corruption (0..1), set from the scroll on the game page. */
+.corruption-vignette {
+    background: radial-gradient(ellipse at center, transparent 45%, rgb(150 18 14 / 0.6));
+    opacity: calc(var(--corruption, 0) * 0.75);
+}
