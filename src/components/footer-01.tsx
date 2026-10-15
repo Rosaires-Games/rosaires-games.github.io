@@ -334,7 +334,7 @@ function Footer01({
         </div>
       )}
 
-      <div className="relative border-t bg-background">
+      <div className="relative bg-background">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-6 @2xl:flex-row @2xl:items-center @2xl:justify-between">
           {copyright && <p className="text-caption text-muted-foreground">{copyright}</p>}
           {legal.length > 0 && (

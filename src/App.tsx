@@ -114,7 +114,7 @@ function Band() {
         {marqueeWords.map((word) => (
           <span key={word} className="flex items-center gap-10 font-display font-extrabold text-xl uppercase tracking-wider">
             {word}
-            <SunIcon aria-hidden className="size-5 text-sol" />
+            <SunIcon aria-hidden className="size-5 text-sol dark:text-primary-foreground" />
           </span>
         ))}
       </Marquee>
@@ -264,6 +264,7 @@ export default function App() {
         newsletter={null}
         legal={[]}
         copyright={`© ${new Date().getFullYear()} Rosaires Games · Hecho en Argentina`}
+        watermark={false}
       />
     </>
   )

@@ -460,6 +460,8 @@ function CarouselContent({
       onPointerMove={onPointerMove}
       onPointerUp={endDrag}
       onPointerCancel={endDrag}
+      // The browser's own image and link drag would steal the pointer from the drag to scroll.
+      onDragStart={draggable ? (event) => event.preventDefault() : undefined}
       className={cn(
         'flex list-none snap-x snap-mandatory overflow-x-auto overscroll-x-contain scroll-smooth p-0',
         'outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50',
