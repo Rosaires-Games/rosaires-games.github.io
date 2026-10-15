@@ -83,43 +83,6 @@
     --radius-2xl: calc(var(--radius) * 1.8);
     --radius-3xl: calc(var(--radius) * 2.2);
     --radius-4xl: calc(var(--radius) * 2.6);
-  @keyframes noise-grain {
-  0%, 100% {
-    transform: translate(0, 0);
-        }
-  10% {
-    transform: translate(-5%, -10%);
-        }
-  20% {
-    transform: translate(-15%, 5%);
-        }
-  30% {
-    transform: translate(7%, -25%);
-        }
-  40% {
-    transform: translate(-5%, 25%);
-        }
-  50% {
-    transform: translate(-15%, 10%);
-        }
-  60% {
-    transform: translate(15%, 0%);
-        }
-  70% {
-    transform: translate(0%, 15%);
-        }
-  80% {
-    transform: translate(3%, 35%);
-        }
-  90% {
-    transform: translate(-10%, 10%);
-        }
-    }
-  @keyframes blink {
-  50% {
-    opacity: 0;
-        }
-    }
 }
 
 /* Rosaires Games (studio). Colors sampled from rosaires_mark.svg: navy #0E2648, celeste #74ACDF, sol #F6B40E, "GAMES" red. */
@@ -206,6 +169,63 @@
   h1, h2, h3 {
     font-family: var(--font-heading);
   }
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+        }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+        }
+    }
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+        }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+        }
+    }
+
+@keyframes noise-grain {
+  0%, 100% {
+    transform: translate(0, 0);
+        }
+  10% {
+    transform: translate(-5%, -10%);
+        }
+  20% {
+    transform: translate(-15%, 5%);
+        }
+  30% {
+    transform: translate(7%, -25%);
+        }
+  40% {
+    transform: translate(-5%, 25%);
+        }
+  50% {
+    transform: translate(-15%, 10%);
+        }
+  60% {
+    transform: translate(15%, 0%);
+        }
+  70% {
+    transform: translate(0%, 15%);
+        }
+  80% {
+    transform: translate(3%, 35%);
+        }
+  90% {
+    transform: translate(-10%, 10%);
+        }
+    }
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+        }
+    }
 }
 
 @layer base {
@@ -324,14 +344,4 @@
 .corruption-vignette {
     background: radial-gradient(ellipse at center, transparent 45%, rgb(150 18 14 / 0.6));
     opacity: calc(var(--corruption, 0) * 0.75);
-}
-
-/* Outside @theme: Marquee names these keyframes in an inline style, which Tailwind does not see, so inside @theme they were dropped. */
-@keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(calc(-100% - var(--gap))); }
-}
-@keyframes marquee-vertical {
-    from { transform: translateY(0); }
-    to { transform: translateY(calc(-100% - var(--gap))); }
 }
